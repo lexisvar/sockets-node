@@ -18,8 +18,11 @@ io.on('connection', (socket) => {
 		console.log('user disconnected')
 	})
 	socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  })
+		io.emit('chat message', msg)
+	})
+	socket.on('room1', (msg) => {
+		io.emit('room1', msg)
+	})
 })
 
 server.listen(3000, () => {
